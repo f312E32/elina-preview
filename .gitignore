@@ -1,0 +1,11 @@
+node_modules
+.pnpm-store
+.next
+out
+.env*
+*.tsbuildinfo
+playwright-report
+assets/source/
+review/
+screenshots/
+.preview*.log
