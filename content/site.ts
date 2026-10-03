@@ -24,6 +24,24 @@ export type Review = {
 
 type ExpressStatus = "hidden" | "comingSoon" | "available";
 
+export type ServiceChapter = {
+  label: string;
+  heading: string;
+  paragraphs: string[];
+};
+
+export type ServiceDetails = {
+  positioning: string;
+  chapters: [ServiceChapter, ServiceChapter, ServiceChapter, ServiceChapter];
+  duration: string | null;
+  delivery: string | null;
+  location: string | null;
+  communication: string | null;
+  inclusions: string[] | null;
+  price: string | null;
+  availability: string | null;
+};
+
 export type SiteContent = {
   identity: { name: string; role: string };
   home: {
@@ -47,6 +65,7 @@ export type SiteContent = {
       points: string[];
       cta: string;
       contactUrl: string | null;
+      details: ServiceDetails;
     };
     express: {
       status: ExpressStatus;
@@ -57,6 +76,7 @@ export type SiteContent = {
       points: string[];
       cta: string;
       href: string | null;
+      details: ServiceDetails;
     };
   };
   about: {
@@ -108,6 +128,22 @@ export const siteContent: SiteContent = {
       points: ["Сильные стороны", "Направление", "Следующие шаги"],
       cta: "Обсудить программу",
       contactUrl: null,
+      details: {
+        positioning: "Личная работа, чтобы яснее увидеть себя и выбрать следующий профессиональный шаг.",
+        chapters: [
+          { label: "ЗАПРОС", heading: "С чего начинается работа", paragraphs: ["Когда трудно увидеть свои сильные стороны, выбрать направление или решить, что делать дальше.", "Здесь можно остановиться и внимательнее посмотреть на свои интересы, возможности и профессиональный выбор."] },
+          { label: "КАК ПРОХОДИТ", heading: "В центре — ваш запрос", paragraphs: ["Личная работа с Элиной строится вокруг сильных сторон, подходящего направления и следующих шагов.", "Конкретный ход программы зависит от вопроса, с которым вы приходите."] },
+          { label: "РЕЗУЛЬТАТ", heading: "Больше ясности для движения", paragraphs: ["Вы лучше понимаете свои сильные стороны и направления, которые стоит рассмотреть.", "Появляется ориентир для следующих действий и более осознанного выбора."] },
+          { label: "ФОРМАТ", heading: "Личная работа с Элиной", paragraphs: ["Организационные детали программы можно уточнить в разговоре с Элиной после того, как вы расскажете о своём запросе."] },
+        ],
+        duration: null,
+        delivery: null,
+        location: null,
+        communication: null,
+        inclusions: null,
+        price: null,
+        availability: null,
+      },
     },
     express: {
       status: "comingSoon",
@@ -118,6 +154,22 @@ export const siteContent: SiteContent = {
       points: ["Короткий формат", "Первый шаг"],
       cta: "Подробнее",
       href: null,
+      details: {
+        positioning: "Короткий первый шаг к выбору направления в Telegram.",
+        chapters: [
+          { label: "ЗАПРОС", heading: "Когда нужен первый шаг", paragraphs: ["Когда хочется начать разбираться с направлением, но пока нужен более короткий формат.", "Экспресс-продукт задуман как точка входа в этот разговор."] },
+          { label: "КАК ЭТО РАБОТАЕТ", heading: "Коротко и в Telegram", paragraphs: ["Формат готовится к запуску в Telegram.", "Подробности того, как он будет проходить, появятся после подтверждения программы."] },
+          { label: "ЧТО ПОЛУЧАЕТЕ", heading: "Ориентир для начала", paragraphs: ["Цель формата — помочь начать движение к более ясному выбору направления.", "Точное наполнение будет опубликовано к запуску."] },
+          { label: "ФОРМАТ", heading: "Скоро в Telegram", paragraphs: ["Экспресс-формат пока не запущен. Дата старта и организационные детали будут объявлены отдельно."] },
+        ],
+        duration: null,
+        delivery: "Telegram",
+        location: null,
+        communication: null,
+        inclusions: null,
+        price: null,
+        availability: null,
+      },
     },
   },
   about: {

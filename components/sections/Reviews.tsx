@@ -63,7 +63,7 @@ export function Reviews() {
 
   return <section className="reviews-page booklet-page" aria-labelledby="reviews-title" data-active={active % 4}>
     <div className="page-shell">
-      <div className="page-heading"><span className="page-heading__index">04 / ОТЗЫВЫ</span><h1 id="reviews-title">{reviews.title}</h1><p>Истории людей, которые искали своё направление.</p></div>
+      <div className="page-heading"><h1 id="reviews-title">{reviews.title}</h1><p>Истории людей, которые искали своё направление.</p></div>
       <div className="review-browser" onTouchStart={onTouchStart} onTouchMove={onTouchMove} onTouchEnd={onTouchEnd} onTouchCancel={() => { touchStart.current = null; }}>
         <motion.article key={review.id} className="review-browser__main" initial={{ opacity: 0, y: reducedMotion ? 0 : 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: reducedMotion ? 0 : .27, ease: [0.22, 1, 0.36, 1] }} aria-label={`Отзыв ${review.name}`}>
           <div className="review-profile"><ReviewAvatar review={review} prominent /><div className="review-profile__identity"><h2>{review.name}</h2>{review.context && <p>{review.context}</p>}</div><span className="review-profile__index" aria-live="polite">0{active + 1} / 0{reviews.items.length}</span></div>

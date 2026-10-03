@@ -20,7 +20,6 @@ export function Hero() {
   return <section className="hero" aria-labelledby="hero-title">
     <div className="hero__inner editorial-grid">
       <motion.div className="hero__identity" {...reveal(.02)}><span>{identity.name}</span><span>{identity.role}</span></motion.div>
-      <motion.div className="hero__index" {...reveal(.08)}><span className="index-mark" aria-hidden="true" />01 / ОБЛОЖКА</motion.div>
       <div className="hero__stage editorial-grid">
         <motion.div className="hero__portrait-wrap" {...reveal(.2)}><Portrait insight={insight} /></motion.div>
         <h1 className="hero__headline" id="hero-title">

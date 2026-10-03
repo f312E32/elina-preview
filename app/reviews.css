@@ -9,7 +9,6 @@
   background: var(--bg-primary);
 }
 .reviews-page .page-shell { display: flex; flex: 1; flex-direction: column; min-height: 0; }
-.reviews-page .page-heading__index { margin-bottom: 14px; color: var(--brand-primary); }
 .reviews-page .page-heading h1 { font-size: clamp(50px, 4.5vw, 86px); }
 .reviews-page .page-heading p { font-size: clamp(14px, 1vw, 17px); }
 
@@ -97,7 +96,6 @@
 }
 @media (max-width: 760px) {
   .reviews-page.booklet-page { padding: 19px 0 15px; }
-  .reviews-page .page-heading__index { margin-bottom: 10px; }
   .reviews-page .page-heading h1 { font-size: clamp(37px, 9.3vw, 44px); }
   .reviews-page .page-heading p { margin-top: 8px; font-size: 13px; }
   .review-browser { height: clamp(400px, calc(100svh - 424px), 510px); min-height: 400px; max-height: none; margin-top: 17px; padding: 18px; }

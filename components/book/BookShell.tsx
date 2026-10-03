@@ -55,9 +55,9 @@ export function BookShell({ children }: { children: React.ReactNode }) {
   return <BookContext.Provider value={context}>
     <a className="skip-link" href="#main">Перейти к содержимому</a>
     <Header />
-    <motion.main id="main" key={pathname} className="book-main" initial={{ opacity: 0, x: reducedMotion ? 0 : 13 }} animate={{ opacity: phase === "cover" ? .76 : 1, x: phase === "cover" && !reducedMotion ? -14 : 0 }} transition={{ duration: reducedMotion ? .14 : .36, ease: [0.22, 1, 0.36, 1] }}>{children}</motion.main>
+    <motion.main id="main" key={pathname} className="book-main" initial={{ opacity: 0, x: 13 }} animate={{ opacity: phase === "cover" ? .76 : 1, x: phase === "cover" && !reducedMotion ? -14 : 0 }} transition={{ duration: reducedMotion ? .14 : .36, ease: [0.22, 1, 0.36, 1] }}>{children}</motion.main>
     <BookNavigation />
     <ContactSheet />
-    <div className="book-turn" data-phase={phase} aria-hidden="true"><span>{chapters.find((chapter) => chapter.href === (pendingHref.current ?? activeRoute))?.number ?? "01"} / 04</span></div>
+    <div className="book-turn" data-phase={phase} aria-hidden="true" />
   </BookContext.Provider>;
 }
