@@ -7,6 +7,7 @@ import "@fontsource-variable/manrope/wght.css";
 import "@fontsource/ibm-plex-mono/400.css";
 import "./globals.css";
 import "./sections.css";
+import "./services-spread.css";
 import "./reviews.css";
 
 const { identity, seo } = siteContent;
